@@ -15,5 +15,6 @@ namespace ProjectGit.Data
         }
 
         public DbSet<ProjectGit.Models.Managment> Managment { get; set; } = default!;
+        public DbSet<ProjectGit.Models.Students> Students { get; set; } = default!;
     }
 }
