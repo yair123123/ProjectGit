@@ -1,3 +1,6 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ProjectGit.Data;
 
 namespace ProjectGit
 {
@@ -6,6 +9,8 @@ namespace ProjectGit
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<ProjectGitContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ProjectGitContext") ?? throw new InvalidOperationException("Connection string 'ProjectGitContext' not found.")));
 
             // Add services to the container.
 
