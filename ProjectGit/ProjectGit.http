@@ -1,0 +1,6 @@
+@ProjectGit_HostAddress = http://localhost:5024
+
+GET {{ProjectGit_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
